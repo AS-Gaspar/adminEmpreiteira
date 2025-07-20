@@ -1,7 +1,8 @@
 import express from 'express'
-import path from 'path'
+import workRouter from './src/routes/works.js'
 
 const app = express()
-const PORT = 3000
+app.use(express.json())
+app.use(workRouter)
 
-app.listen(PORT)
+app.listen(3000, () => console.log("Server running on port 3000"))
