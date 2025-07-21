@@ -6,7 +6,7 @@
 export function up(knex) {
   return knex.schema
     .createTable('works', table => {
-        table.increments('id'),
+        table.increments('id').primary(),
         table.string('name', 255).notNullable,
         table.string('builder', 255).notNullable,
         table.string('address', 255).notNullable,

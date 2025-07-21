@@ -6,13 +6,13 @@
 export function up(knex) {
     return knex.schema
     .createTable('employees', table => {
-        table.increments('id'),
+        table.increments('id').primary(),
         table.string('name', 255).notNullable(),
         table.string('company', 255).notNullable(),
         table.string('profession', 255).notNullable(),
         table.integer('daily_value').unsigned().notNullable(),
         table.specificType('days_worked', 'REAL').unsigned().notNullable(),
-        table.integer('work_id').unsigned().references('id').inTable('works')
+        table.integer('work_id').unsigned().references('id').inTable('works').onDelete('SET NULL').onUpdate('CASCADE')
         table.timestamps(true, true)
     }) 
 };

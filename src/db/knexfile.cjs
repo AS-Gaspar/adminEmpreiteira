@@ -1,14 +1,18 @@
+const dotenv = require('dotenv');
+dotenv.config()
+
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
-
 module.exports = {
     development: {
         client: 'postgresql',
         connection: {
-            database: 'empreiteira',
+            host: 'localhost',
             user: 'gaspar',
-            password: null
+            password: '0405',
+            database: 'empreiteira',
+            port: Number(process.env.DB_PORT) || 5432,
         },
         pool: {
             min: 2,
