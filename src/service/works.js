@@ -9,6 +9,10 @@ class WorkService {
     getAllWorks() {
         return WorkDAO.getAllWorks()
     }
+
+    getWork(id) {
+        return WorkDAO.getWork(id)
+    }
 }
 
 export default new WorkService()

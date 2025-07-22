@@ -20,6 +20,15 @@ class WorkDAO {
         }
         
     }
+
+    async getWork(id) {
+        try {
+            const work = await db.select('*').from('works').where('works.id', id).first()
+            return work
+        } catch (err) {
+            console.error(err)
+        }
+    }
 }
 
 export default new WorkDAO

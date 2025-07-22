@@ -23,6 +23,15 @@ class employeeDAO {
             console.error(err)
         }
     }
+
+    async getEmployee(id) {
+        try {
+            const employee = await db.select('*').from('employees').where('employees.id', id)
+            return employee
+        } catch (err) {
+            console.error(err)
+        }
+    }
 }
 
 export default new employeeDAO

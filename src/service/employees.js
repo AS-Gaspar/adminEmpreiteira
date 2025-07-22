@@ -9,6 +9,10 @@ class employeeService {
     getAllEmployees() {
         return employeeDAO.getAllEmployees()
     }
+
+    getEmployee(id) {
+        return employeeDAO.getEmployee(id)
+    }
 }
 
 export default new employeeService()

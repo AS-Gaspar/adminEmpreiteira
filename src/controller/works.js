@@ -16,6 +16,14 @@ class Work {
     } catch (err) {
         console.error(err)
     }
+
+    async getWork(req, res) {
+        const { id } = req.params
+        const work = await workService.getWork(Number(id))
+        res.status(201).json(work)
+    } catch (err) {
+        console.error(err)
+    }
 }
 
 export default new Work()

@@ -18,6 +18,16 @@ class Employee {
             console.error(err)
         }
     }
+
+    async getEmployee(req, res) {
+        try {
+            const { id } = req.params
+            const employee = await employeeService.getEmployee(id)
+            res.status(201).json(employee)
+        } catch (err) {
+            console.error(err)
+        }
+    }
 }
 
 export default new Employee()
