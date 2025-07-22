@@ -9,6 +9,15 @@ class Employee {
             console.error(err)
         }
     }
+
+    async getAllEmployees(req, res) {
+        try {
+            const employees = await employeeService.getAllEmployees(req.body)
+            res.status(201).json(employees)
+        } catch (err) {
+            console.error(err)
+        }
+    }
 }
 
 export default new Employee()

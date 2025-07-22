@@ -5,6 +5,10 @@ class WorkService {
         const { name, builder, address } = workDto
         return WorkDAO.createWork(name, builder, address)
     }
+
+    getAllWorks() {
+        return WorkDAO.getAllWorks()
+    }
 }
 
 export default new WorkService()

@@ -8,10 +8,10 @@ module.exports = {
     development: {
         client: 'postgresql',
         connection: {
-            host: 'localhost',
-            user: 'gaspar',
-            password: '0405',
-            database: 'empreiteira',
+            host: process.env.DB_HOST,
+            user: process.env.DB_USER,
+            password: process.env.DB_PASSWORD,
+            database: process.env.DB_NAME,
             port: Number(process.env.DB_PORT) || 5432,
         },
         pool: {

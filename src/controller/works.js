@@ -9,6 +9,13 @@ class Work {
             console.error(err)
         }
     } 
+
+    async getAllWorks(req, res) {
+        const works = await workService.getAllWorks(req.body)
+        res.status(201).json(works)
+    } catch (err) {
+        console.error(err)
+    }
 }
 
 export default new Work()
