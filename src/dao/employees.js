@@ -1,5 +1,4 @@
 import db from '../db/db.js'
-import knex from '../db/knexfile.cjs'
 
 class employeeDAO {
     async createEmployee(name, company, profession, daily_value, days_worked, work_id) {
@@ -18,8 +17,8 @@ class employeeDAO {
 
     async getAllEmployees() {
         try {
-            const works = await knex('employees').select('*')
-            return works
+            const employees = await db.select('*').from('employees')
+            return employees
         } catch (err) {
             console.error(err)
         }
