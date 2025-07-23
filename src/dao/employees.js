@@ -32,6 +32,22 @@ class employeeDAO {
             console.error(err)
         }
     }
+
+    async editEmployee(id) {
+        try {
+            // fazer
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    async deleteEmployee(id) {
+        try {
+            // fazer
+        } catch (err) {
+            console.error(err)
+        }
+    }
 }
 
 export default new employeeDAO

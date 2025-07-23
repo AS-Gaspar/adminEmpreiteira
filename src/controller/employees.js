@@ -28,6 +28,22 @@ class Employee {
             console.error(err)
         }
     }
+
+    async editEmployee(req, res) {
+        try {
+            // fazer
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    async deleteEmployee(req, res) {
+        try {
+            // fazer
+        } catch (err) {
+            console.error(err)
+        }
+    }
 }
 
 export default new Employee()
