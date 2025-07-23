@@ -11,12 +11,13 @@ Para isso, estou desenvolvendo este projeto para auxiliar a empresa em ter maior
 
 ## 🛠️ Funcionalidades á implementar:
 
-- CRUD de obras
-- CRUD de EPIS, acessórios, equipamentos e ferramentas
-- Registro de compras de materias e locação de ferramentas por obras
-- Adicionar itens e gastos para obras
-- Gerar relatório de gastos
-- +++  
+- [ ] CRUD de obras
+  - [ ] Backend
+  - [ ] Frontend
+- [ ] CRUD de EPIS, acessórios, equipamentos e ferramentas
+- [ ] Registro de compras de materias e locação de ferramentas por obras
+- [ ] Adicionar itens e gastos para obras
+- [ ] Gerar relatório de gastos
 
 ## 🧩 Tecnologias utilizadas
 
