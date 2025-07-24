@@ -31,7 +31,9 @@ class Employee {
 
     async editEmployee(req, res) {
         try {
-            // fazer
+            const { id } = req.params
+            const updatedEmployee = await employeeService.editEmployee(id, req.body)
+            res.status(201).json(updatedEmployee )
         } catch (err) {
             console.error(err)
         }

@@ -14,8 +14,9 @@ class employeeService {
         return employeeDAO.getEmployee(id)
     }
 
-    editEmployee(id) {
-        return employeeDAO.editEmployee(id)
+    editEmployee(id, employeeDto) {
+        const { name, company, profession, daily_value, days_worked } = employeeDto
+        return employeeDAO.editEmployee(id, name, company, profession, daily_value, days_worked)
     }
 
     deleteEmployee(id) {

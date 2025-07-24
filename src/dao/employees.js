@@ -26,16 +26,28 @@ class employeeDAO {
 
     async getEmployee(id) {
         try {
-            const employee = await db.select('*').from('employees').where('employees.id', id)
+            const employee = await db.select('*').from('employees').where({ id: id })
             return employee
         } catch (err) {
             console.error(err)
         }
     }
 
-    async editEmployee(id) {
+    async editEmployee(id, name, company, profession, daily_value, days_worked) {
         try {
-            // fazer
+            const employee = await db.select('*').from('employees').where({ id: id })
+            const { n, c, p, dv, dw } = employee
+            const updatedEmployee = await db('employees').where({ id: id}).update({
+                name: name || n,
+                company: company || c,
+                profession: profession || p,
+                daily_value: daily_value || dv,
+                days_worked: days_worked || dw,
+                updated_at: db.fn.now()
+            })
+            .returning('*')
+
+            return updatedEmployee
         } catch (err) {
             console.error(err)
         }
