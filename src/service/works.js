@@ -18,6 +18,10 @@ class WorkService {
         const { name, builder, address } = workDto
         return WorkDAO.editWork(id, name, builder, address)
     }
+
+    deleteWork(id) {
+        return WorkDAO.deleteWork(id)
+    }
 }
 
 export default new WorkService()

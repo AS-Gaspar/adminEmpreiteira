@@ -41,9 +41,11 @@ class Work {
 
     async deleteWork(req, res) {
         try {
-            // fazer
+            const { id } = req.params
+            const deleteWork = await workService.deleteWork(id)
+            res.status(201).json(deleteWork)
         } catch (err) {
-            console.erroe(err)
+            console.error(err)
         }
     }
 }

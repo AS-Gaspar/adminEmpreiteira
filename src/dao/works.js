@@ -50,7 +50,8 @@ class WorkDAO {
 
     async deleteWork(id) {
         try {
-            // fazer
+            const deleteWork = await db.select('*').from('works').where({ id: id}).del()
+            return deleteWork
         } catch (err) {
             console.error(err)
         }
