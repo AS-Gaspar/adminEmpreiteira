@@ -11,11 +11,11 @@ Para isso, estou desenvolvendo este projeto para auxiliar a empresa em ter maior
 
 ## 🛠️ Funcionalidades á implementar:
 
-- [ ] CRUD de obras
-  - [ ] Backend
+- [X] CRUD de obras
+  - [X] Backend
   - [ ] Frontend
-- [ ] CRUD de funcionários
-  - [ ] Backend
+- [X] CRUD de funcionários
+  - [X] Backend
   - [ ] Frontend
 - [ ] CRUD de EPIS, acessórios, equipamentos e ferramentas
 - [ ] Registro de compras de materias e locação de ferramentas por obras
