@@ -17,6 +17,10 @@ class employeeService {
     editEmployee(id) {
         return employeeDAO.editEmployee(id)
     }
+
+    deleteEmployee(id) {
+        return employeeDAO.deleteEmployee(id)
+    }
 }
 
 export default new employeeService()

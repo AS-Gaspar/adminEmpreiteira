@@ -31,7 +31,9 @@ class Work {
 
     async editWork(req, res) {
         try {
-            // fazer
+            const { id } = req.params
+            const updatedWork = await workService.editWork(id, req.body)
+            res.status(201).json(updatedWork)
         } catch (err) {
             console.error(err)
         }

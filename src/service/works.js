@@ -13,6 +13,11 @@ class WorkService {
     getWork(id) {
         return WorkDAO.getWork(id)
     }
+
+    editWork(id, workDto) {
+        const { name, builder, address } = workDto
+        return WorkDAO.editWork(id, name, builder, address)
+    }
 }
 
 export default new WorkService()

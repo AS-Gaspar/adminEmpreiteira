@@ -29,6 +29,33 @@ class WorkDAO {
             console.error(err)
         }
     }
+
+    async editWork(id, name, builder, address) {
+        try {
+            const work = await db.select('*').from('works').where({ id: id })
+            const { n, b, a } = work
+            const updatedWork = await db('works').where({ id: id} ).update({
+                name: name || n,
+                builder: builder || b,
+                address: address || a,
+                updated_at: db.fn.now()
+            }) 
+            .returning('*')
+
+            return updatedWork
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    async deleteWork(id) {
+        try {
+            // fazer
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
 }
 
 export default new WorkDAO
