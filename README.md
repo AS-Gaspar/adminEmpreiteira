@@ -14,6 +14,9 @@ Para isso, estou desenvolvendo este projeto para auxiliar a empresa em ter maior
 - [ ] CRUD de obras
   - [ ] Backend
   - [ ] Frontend
+- [ ] CRUD de funcionários
+  - [ ] Backend
+  - [ ] Frontend
 - [ ] CRUD de EPIS, acessórios, equipamentos e ferramentas
 - [ ] Registro de compras de materias e locação de ferramentas por obras
 - [ ] Adicionar itens e gastos para obras
