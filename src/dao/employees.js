@@ -55,7 +55,9 @@ class employeeDAO {
 
     async deleteEmployee(id) {
         try {
-            // fazer
+            const deleteEmployee = await db.select('*').from('employees').where({ id: id }).del()
+
+            return deleteEmployee
         } catch (err) {
             console.error(err)
         }

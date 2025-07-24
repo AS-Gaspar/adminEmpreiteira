@@ -41,7 +41,9 @@ class Employee {
 
     async deleteEmployee(req, res) {
         try {
-            // fazer
+            const { id }= req.params
+            const deleteEmployee = await employeeService.deleteEmployee(id)
+            res.status(201).json(deleteEmployee)
         } catch (err) {
             console.error(err)
         }
