@@ -35,8 +35,8 @@ class employeeDAO {
 
     async editEmployee(id, name, company, profession, daily_value, days_worked) {
         try {
-            const employee = await db.select('*').from('employees').where({ id: id })
-            const { n, c, p, dv, dw } = employee
+            const employee = await db.select('*').from('employees').where({ id: id }).first()
+            const { name: n, company: c, profession: p, daily_value: dv, days_worked: dw } = employee
             const updatedEmployee = await db('employees').where({ id: id}).update({
                 name: name || n,
                 company: company || c,
