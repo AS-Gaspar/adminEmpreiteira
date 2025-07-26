@@ -11,7 +11,7 @@ async function loadData() {
         let id = work.id
 
         tdWorkName.innerHTML = work.name
-        workPath.href = `http://localhost:3000/api/work/${id}`
+        workPath.href = `work.html?id=${id}`
         workPath.textContent = 'Acess Work'
         trWork.appendChild(tdWorkName)
         trWork.appendChild(workPath)
