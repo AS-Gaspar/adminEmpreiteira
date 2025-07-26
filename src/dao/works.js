@@ -32,8 +32,8 @@ class WorkDAO {
 
     async editWork(id, name, builder, address) {
         try {
-            const work = await db.select('*').from('works').where({ id: id })
-            const { n, b, a } = work
+            const work = await db.select('*').from('works').where({ id: id }).first()
+            const { name: n, builder: b, address: a } = work 
             const updatedWork = await db('works').where({ id: id} ).update({
                 name: name || n,
                 builder: builder || b,
