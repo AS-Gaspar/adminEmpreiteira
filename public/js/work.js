@@ -6,11 +6,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         const response = await fetch(`http://localhost:3000/api/work/${id}`)
         const work = await response.json()
 
+        document.getElementById("tittle").textContent = work.name
         document.getElementById("work").textContent = work.name
         document.getElementById("builder").textContent = work.builder
         document.getElementById("address").textContent = work.address
-
-
     } else {
         document.body.textContent = "Obra não encontrada"
     }
@@ -35,7 +34,7 @@ async function loadEmployees(work_id) {
             tdCompany.innerHTML = employee.company
             tdProfession.innerHTML = employee.profession
             tdDailyValue.innerHTML = employee.daily_value
-            tdDaysWorked.innerHTML - employee.days_worked
+            tdDaysWorked.innerHTML = employee.days_worked
 
             trEmployee.appendChild(tdName) 
             trEmployee.appendChild(tdCompany)

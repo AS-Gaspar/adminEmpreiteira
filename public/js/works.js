@@ -1,7 +1,7 @@
 async function loadData() {
     const WorksURL = "http://localhost:3000/api/works"
     const worksTable = document.getElementById("works_table")
-    const requestResult = await window.fetch(WorksURL)
+    const requestResult = (await window.fetch(WorksURL)).json()
     const works = await requestResult.json()
 
     works.forEach(work => {
