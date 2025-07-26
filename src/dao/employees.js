@@ -33,16 +33,17 @@ class employeeDAO {
         }
     }
 
-    async editEmployee(id, name, company, profession, daily_value, days_worked) {
+    async editEmployee(id, name, company, profession, daily_value, days_worked, work_id) {
         try {
             const employee = await db.select('*').from('employees').where({ id: id }).first()
-            const { name: n, company: c, profession: p, daily_value: dv, days_worked: dw } = employee
+            const { name: n, company: c, profession: p, daily_value: dv, days_worked: dw, work_id: wid} = employee
             const updatedEmployee = await db('employees').where({ id: id}).update({
                 name: name || n,
                 company: company || c,
                 profession: profession || p,
                 daily_value: daily_value || dv,
                 days_worked: days_worked || dw,
+                work_id: work_id || wid,
                 updated_at: db.fn.now()
             })
             .returning('*')
